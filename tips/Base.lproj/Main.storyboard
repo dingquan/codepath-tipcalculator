@@ -107,7 +107,7 @@
         <!--Settings-->
         <scene sceneID="UVJ-2p-ZdY">
             <objects>
-                <viewController id="5AO-ca-E0R" sceneMemberID="viewController">
+                <viewController id="5AO-ca-E0R" customClass="SettingsViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sjh-aB-AnT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,11 +136,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="RJO-3v-nRy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UMO-ba-nF3"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Yfv-t4-2NH"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UMO-ba-nF3">
+                            <connections>
+                                <segue destination="yUX-Nz-ZxR" kind="unwind" unwindAction="cancel:" id="03k-WW-CeG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Yfv-t4-2NH">
+                            <connections>
+                                <segue destination="yUX-Nz-ZxR" kind="unwind" unwindAction="save:" id="DBb-w8-agl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="onM-nd-O1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yUX-Nz-ZxR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1683" y="392"/>
         </scene>
