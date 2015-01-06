@@ -28,10 +28,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var defaultTipPercentage = (Double)(defaults.integerForKey("defaultTipPercentage"))
+        
+        var billAmount = (billField.text as NSString).doubleValue
+        var tip = billAmount * defaultTipPercentage / 100.0
+        var total = billAmount + tip
+        
+        tipLabel.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
+    }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         var tipPercentages = [0.15, 0.2, 0.25]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+
         var billAmount = (billField.text as NSString).doubleValue
         var tip = billAmount * tipPercentage
         var total = billAmount + tip

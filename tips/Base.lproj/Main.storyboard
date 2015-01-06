@@ -112,8 +112,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mxz-h1-Wpe">
-                                <rect key="frame" x="86" y="138" width="148" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mxz-h1-Wpe">
+                                <rect key="frame" x="73" y="138" width="175" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -138,15 +138,18 @@
                     <navigationItem key="navigationItem" title="Settings" id="RJO-3v-nRy">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UMO-ba-nF3">
                             <connections>
-                                <segue destination="yUX-Nz-ZxR" kind="unwind" unwindAction="cancel:" id="03k-WW-CeG"/>
+                                <segue destination="yUX-Nz-ZxR" kind="unwind" identifier="cancel" unwindAction="cancel:" id="03k-WW-CeG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Yfv-t4-2NH">
                             <connections>
-                                <segue destination="yUX-Nz-ZxR" kind="unwind" unwindAction="save:" id="DBb-w8-agl"/>
+                                <segue destination="yUX-Nz-ZxR" kind="unwind" identifier="save" unwindAction="save:" id="DBb-w8-agl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="defaultTipPercentageField" destination="Qvq-lL-YhC" id="d10-yR-bAC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="onM-nd-O1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yUX-Nz-ZxR" userLabel="Exit" sceneMemberID="exit"/>
